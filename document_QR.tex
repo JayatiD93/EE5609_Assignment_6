@@ -1,0 +1,273 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+
+
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
+\vspace{3cm}
+
+
+\title{Assignment 6}
+\author{Jayati Dutta}
+
+
+
+
+
+% make the title area
+\maketitle
+
+\newpage
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+
+\begin{abstract}
+This is a simple document explaining how to determine the QR decomposition of a 2x2 matrix.
+\end{abstract}
+
+%Download all python codes 
+%
+%\begin{lstlisting}
+%svn co https://github.com/JayatiD93/trunk/My_solution_design/codes
+%\end{lstlisting}
+
+Download all and latex-tikz codes from 
+%
+\begin{lstlisting}
+svn co https://github.com/gadepall/school/trunk/ncert/geometry/figs
+\end{lstlisting}
+%
+
+
+\section{Problem}
+Find the QR decomposition of $\myvec{55 & -60\\-60 & 20}$
+
+\section{Explanation}
+Let $\vec{a}$ and $\vec{b}$ are the column vectors of the given matrix. So,
+\begin{align}
+\vec{a} = \myvec{55\\-60}\\
+\vec{b} = \myvec{-60\\20}
+\end{align}
+$\vec{a}$ and $\vec{b}$ can be expressed as:
+\begin{align}
+\vec{a} = K_1 \vec{u_1}\\
+\vec{b} = r_1\vec{u_1} + K_2\vec{u_2}
+\end{align}
+Where,
+\begin{align}
+K_1= \norm{\vec{a}}\\
+\implies \vec{u_1} = \frac{\vec{a}}{\norm{\vec{a}}}\\
+r_1 = \frac{\vec{u_1}^T \vec{b}}{\norm{\vec{u_1}}^2}\\
+\vec{u_2}= \frac{\vec{b}-r_1\vec{u_1}}{\norm{\vec{b}-r_1\vec{u_1}}}\\
+K_2 = \vec{u_2}^T \vec{b}
+\end{align}
+Then we can express the given matrix as:
+\begin{align}
+\myvec{a & b} = \myvec{u_1 & u_2}\myvec{K_1 & r_1\\0 & K_2}\\
+\text{or,} \myvec{a & b} = \vec{Q}\vec{R}
+\end{align}
+Now, 
+\begin{align}
+K_1 =\norm{\vec{a}}= \sqrt{55^2 + (-60)^2} = 5\sqrt{265}\\
+\vec{u_1} = \frac{\vec{a}}{5\sqrt{265}} = \frac{1}{\sqrt{265}}\myvec{11\\-12}\\
+\norm{\vec{u_1}} = 1\\
+r_1= \vec{u_1}^T \vec{b} = \frac{1}{\sqrt{265}}\myvec{11 & -12}\myvec{-60\\20}\\
+\implies r_1=-\frac{900}{\sqrt{265}}
+\end{align}
+So,
+\begin{align}
+r_1 \vec{u_1}= -\frac{900}{\sqrt{265}} \frac{1}{\sqrt{265}}\myvec{11\\-12}\\
+\implies r_1 \vec{u_1}=\myvec{-\frac{1980}{53}\\\frac{2160}{53}}\\
+\vec{b} - r_1 \vec{u_1}= \myvec{-60\\20} - \myvec{-\frac{1980}{53}\\\frac{2160}{53}}\\
+\implies \vec{b} - r_1 \vec{u_1} = -\frac{100}{53}\myvec{12\\11}\\
+\norm{\vec{b} - r_1 \vec{u_1}} = \frac{100\sqrt{5}}{\sqrt{53}}
+\end{align}
+Similarly, we can obtain:
+\begin{align}
+\vec{u_2}= -\frac{1}{\sqrt{265}}\myvec{12\\11}=\myvec{-\frac{12}{\sqrt{265}}\\-\frac{11}{\sqrt{265}}}\\
+K_2 = \vec{u_2}^T \vec{b}= -\frac{1}{\sqrt{265}}\myvec{12 & 11}\myvec{-60\\20} \\
+= \frac{500}{\sqrt{265}}
+\end{align}
+Now, after QR decomposition of the given matrix we can get:
+\begin{align}
+\myvec{55 & -60\\-60 & 20} = \myvec{\frac{11}{\sqrt{265}} & \frac{-12}{\sqrt{265}}\\\frac{-12}{\sqrt{265}} & \frac{-11}{\sqrt{265}}} \myvec{5\sqrt{265} & \frac{-900}{\sqrt{265}}\\0 & \frac{500}{\sqrt{265}}}
+\end{align}
+
+%\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+%\numberwithin{equation}{enumi}
+%\item Verification of the above problem using python code.\\
+%\solution The  following Python code generates Fig. \ref{fig:hyperbola}
+%\begin{lstlisting}
+%codes/hyperbola_3.py
+%\end{lstlisting}
+%%
+%\end{enumerate}
+
+\end{document}
+
+
+
